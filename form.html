@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Siswa Baru</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Tengah horizontal */
+            align-items: flex-start; /* Posisi di atas, bukan tengah */
+            min-height: 100vh;       /* tetap full tinggi layar */
+            color: #fff; 
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            margin-bottom: 15px;
+        }   
+        label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        } 
+        button {
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 48%;
+            margin-right: 4%;
+        }
+        button:hover {
+            background-color: #2575fc;
+        }
+        button[type="reset"] {
+            background-color: #ccc;
+            color: #333;
+        }
+        button[type="reset"]:hover {
+            background-color: #aaa;
+        }
+        @media (max-width: 600px) {
+            button {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="login.php" method="post">
+            <h1>Formulir Pendaftaran Siswa Baru</h1>
+            <p>
+                <label>Nama Lengkap:</label>
+                <input type="text" name="nama" required />
+            </p>
+            <p>
+                <label>NISN/NIS:</label>
+                <input type="text" name="nisn/nis" required />
+            </p>
+            <p>
+                <label>Jenis Kelamin:</label>
+                <label><input type="radio" name="jenis_kelamin" value="Pria" required> Pria</label>
+                <label><input type="radio" name="jenis_kelamin" value="Wanita" required> Wanita</label>
+            </p>
+            <p>
+                <label>Tempat Lahir:</label>
+                <input type="text" name="tempat_lahir" required />
+            </p>
+            <p>
+                <label>Tanggal Lahir:</label>
+                <input type="date" name="tanggal_lahir" required />
+            </p>
+            <p>
+                <label>Alamat:</label>
+                <textarea name="alamat" placeholder="Alamat lengkap Anda" required></textarea>
+            </p>
+            <p>
+                <label>Nomor Telepon:</label>
+                <input type="text" name="nomor_telepon" required />
+            </p>
+            <p>
+                <label>Email:</label>
+                <input type="text" name="email" required />
+            </p>
+            <p>
+                <label>Jurusan yang dipilih:</label>
+                <select name="jurusan" required>
+                    <option value="tkj">TKJ</option>
+                    <option value="rpl">RPL</option>
+                    <option value="dpib">DPIB</option>
+                    <option value="tsm">TSM</option>
+                    <option value="tkp">TKP</option>
+                    <option value="tav">TAV</option>
+                    <option value="tei">TEI</option>
+                </select>
+            </p>
+            <p>
+                <label>Upload Foto:</label>
+                <input type="file" name="foto" required />
+            </p>
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit">Kirim</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
