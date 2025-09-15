@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rental Mobil Sport Indonesia</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #222;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        main {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            max-width: 480px;
+            width: 100%;
+            padding: 30px 35px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section select,
+        .section input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        .section select:focus,
+        .section input[type="number"]:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .disclaimer {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .disclaimer ol {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        @media (max-width: 520px) {
+            main {
+                padding: 25px 20px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Rental Mobil Sport Indonesia</h1>
+        <p>Website pertama di Indonesia dengan rental mobil sport berkualitas</p>
+    </header>
+    <main>
+        <section class="section">
+            <label for="mobil" style="font-weight:600; margin-bottom:8px; display:block;">Pilih Mobil</label>
+            <select name="mobil" id="mobil" required>
+                <option value="" disabled selected>-- Pilih Mobil --</option>
+                <option value="avanza">Toyota Avanza</option>
+                <option value="supra">Toyota Supra</option>
+                <option value="mustang">Ford Mustang</option>
+                <option value="ferrari">Ferrari F8</option>
+            </select>
+        </section>
+        <section class="section disclaimer">
+            <p><strong>Keterangan Rental (Disclaimer):</strong> Mobil disewakan selalu dengan supir.</p>
+            <ol>
+                <li>Biaya sewa mobil /hari = Rp350.000</li>
+                <li>Biaya supir /hari = Rp150.000</li>
+                <li>Biaya asuransi /sewa = Rp30.000</li>
+            </ol>
+        </section>
+        <section class="section">
+            <form action="webrental.php" method="post">
+                <label for="hari" style="font-weight:600; margin-bottom:8px; display:block;">Jumlah Hari Sewa</label>
+                <input type="number" name="hari" id="hari" placeholder="Masukkan jumlah hari sewa" min="1" required />
+                <input type="submit" value="Hitung Total Biaya" />
+            </form>
+        </section>
+    </main>
+</body>
+</html>
